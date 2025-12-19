@@ -1,101 +1,100 @@
-# 🚀 GAIB H3D: Generative Artificial Intelligence Bria with Hunyuan 3D
+# 🚀 GAIB H3D: Inteligencia Artificial Generativa Bria con Hunyuan 3D
 
 ![Blender](https://img.shields.io/badge/Blender-4.0%2B-orange?logo=blender)
 ![ComfyUI](https://img.shields.io/badge/Backend-ComfyUI-blue)
 ![Python](https://img.shields.io/badge/Code-Python%203.10-yellow?logo=python)
-![Status](https://img.shields.io/badge/Status-Hackathon%20MVP-green)
 
-**GAIB H3D** is a direct bridge between the generative power of **Hunyuan3D + Bria AI** and the professional **Blender** environment. This Add-on allows artists and developers to generate textured 3D models from text and prepare them for animation (Rigging) with a single click, without ever leaving the Blender interface.
-
----
-
-## 🎯 About This Project
-
-This repository contains the source code and workflow for integrating local Generative AI into professional 3D pipelines. The project solves the friction between asset generation and implementation.
-
-**Key Features:**
-* 🎨 **Text-to-3D Generation:** Utilizes Hunyuan3D (v2.1) for high-fidelity geometry.
-* 🖌️ **Auto-Texturing:** Integrates texture projection via Juggernaut XL and Bria AI (RMBG) for background removal.
-* 🦴 **Auto-Rig Ready:** Automated export to `.fbx` format optimized for Mixamo.
-* 🔒 **Local Privacy:** All processing happens on your machine (Localhost), ensuring data privacy.
+**GAIB H3D** es un puente directo entre el poder generativo de **Hunyuan3D + Bria AI** y el entorno profesional de **Blender**. Este Add-on permite a artistas y desarrolladores generar modelos 3D texturizados a partir de texto y prepararlos para animación (Rigging) con un solo clic, sin salir nunca de la interfaz de Blender.
 
 ---
 
-## 🛠️ Prerequisites
+## 🎯 Sobre este Proyecto
 
-Before installing the Add-on, ensure you meet the following hardware and software requirements:
+Este repositorio contiene el código fuente y el flujo de trabajo para integrar IA Generativa local en pipelines de 3D profesional. El proyecto resuelve la fricción entre la generación de activos y su implementación.
 
-* **OS:** Windows 10/11.
-* **GPU:** NVIDIA RTX 3060 or higher (Recommended 12GB+ VRAM, Minimum 6GB).
-* **Base Software:**
-    * [Blender 4.0](https://www.blender.org/) or higher.
-    * [ComfyUI](https://github.com/comfyanonymous/ComfyUI) (Standard or Portable installation).
+**Características Clave:**
+* 🎨 **Generación de Texto a 3D:** Utiliza Hunyuan3D (v2.1) para geometría de alta fidelidad.
+* 🖌️ **Auto-Texturizado:** Integra proyección de texturas vía Juggernaut XL y Bria AI (RMBG) para la eliminación de fondos.
+* 🦴 **Listo para Auto-Rig:** Exportación automatizada a formato `.fbx` optimizado para Mixamo.
+* 🔒 **Privacidad Local:** Todo el procesamiento ocurre en tu máquina (Localhost), garantizando la privacidad de los datos.
 
 ---
 
-## 📦 Step-by-Step Installation Guide
+## 🛠️ Requisitos Previos
 
-### Phase 1: Backend Configuration (ComfyUI)
+Antes de instalar el Add-on, asegúrate de cumplir con los siguientes requisitos de hardware y software:
 
-1.  **Install Required Nodes:**
-    Use *ComfyUI Manager* to install these nodes if you don't have them:
+* **SO:** Windows 10/11.
+* **GPU:** NVIDIA RTX 3060 o superior (Recomendado 12GB+ VRAM, Mínimo 6GB).
+* **Software Base:**
+    * [Blender 4.0](https://www.blender.org/) o superior.
+    * [ComfyUI](https://github.com/comfyanonymous/ComfyUI) (Instalación Estándar o Portable).
+
+---
+
+## 📦 Guía de Instalación Paso a Paso
+
+### Fase 1: Configuración del Backend (ComfyUI)
+
+1.  **Instalar Nodos Requeridos:**
+    Usa el *ComfyUI Manager* para instalar estos nodos si no los tienes:
     * `ComfyUI-Hunyuan3DWrapper`
     * `ComfyUI-Bria_AI-RMBG`
 
-2.  **Download Models:**
-    Place the checkpoints in their corresponding folders (`ComfyUI/models/...`):
+2.  **Descargar Modelos:**
+    Coloca los checkpoints en sus carpetas correspondientes (`ComfyUI/models/...`):
     * **Hunyuan3D v2.0:** `models/hunyuan3d/`
-    * **Juggernaut XL (or similar):** `models/checkpoints/`
-    * **Bria RMBG 1.4:** `models/loras/` or the folder designated by the node.
+    * **Juggernaut XL (o similar):** `models/checkpoints/`
+    * **Bria RMBG 1.4:** `models/loras/` o la carpeta designada por el nodo.
 
-### Phase 2: Blender Add-on Installation
+### Fase 2: Instalación del Add-on de Blender
 
-1.  Download the `.zip` file from this repository (or zip `__init__.py` and `workflow.json` together).
-2.  Open Blender and go to **Edit > Preferences > Add-ons**.
-3.  Click on **Install...** and select the `.zip` file.
-4.  Check the box ☑️ **GAIH3D** to enable it.
+1.  Descarga el archivo `.zip` de este repositorio (o comprime juntos `__init__.py` y `workflow.json`).
+2.  Abre Blender y ve a **Edit > Preferences > Add-ons**.
+3.  Haz clic en **Install...** y selecciona el archivo `.zip`.
+4.  Marca la casilla ☑️ **GAIH3D** para activarlo.
 
 ---
 
-## ⚙️ Critical Configuration (Important!)
+## ⚙️ Configuración Crítica (¡Importante!)
 
-1.  In Blender, go to the **Scripting** tab.
-2.  If necessary, edit the `COMFY_OUTPUT_DIR` variable in the script to point to your `ComfyUI/output` folder.
+1.  En Blender, ve a la pestaña de **Scripting**.
+2.  Si es necesario, edita la variable `COMFY_OUTPUT_DIR` en el script para que apunte a tu carpeta `ComfyUI/output`.
     ```python
-    # Example:
-    COMFY_OUTPUT_DIR = r"C:\YourUser\ComfyUI\output"
+    # Ejemplo:
+    COMFY_OUTPUT_DIR = r"C:\TuUsuario\ComfyUI\output"
     ```
-3.  Ensure ComfyUI is running at `http://127.0.0.1:8188`.
+3.  Asegúrate de que ComfyUI se esté ejecutando en `http://127.0.0.1:8188`.
 
 ---
 
-## 🎮 How to Use
+## 🎮 Cómo Usar
 
-1.  **Start ComfyUI:** Ensure the console is open and waiting for commands.
-2.  **Open Blender:** Press the `N` key in the 3D Viewport to open the sidebar.
-3.  **Gen AI Tab:**
-    * Enter your prompt (e.g., *"A futuristic robot, metallic, t-pose"*).
-    * Click on **Generate Model**.
-    * *Wait a few seconds while the ComfyUI console processes...*
-4.  **Results:** The model will appear in the center of your scene.
-5.  **Export:** Click on **Export for Mixamo Auto-Rig** to get the `.fbx` ready in your Downloads folder.
-
----
-
-## 🧪 Manual Mode / Testing (No Add-on)
-
-If you prefer to test the AI workflow without installing the Blender Add-on, we have included the raw workflow file:
-
-1.  Download the `workflow.json` file included in this repository.
-2.  Open ComfyUI in your browser.
-3.  Drag and drop the `workflow.json` file into the window.
-4.  Done! Now you can generate manually and see the magic behind the scenes.
+1.  **Iniciar ComfyUI:** Asegúrate de que la consola esté abierta y esperando comandos.
+2.  **Abrir Blender:** Presiona la tecla `N` en el Viewport 3D para abrir la barra lateral.
+3.  **Pestaña Gen AI:**
+    * Introduce tu *prompt* (ej. *"A futuristic robot, metallic, t-pose"*).
+    * Haz clic en **Generate Model**.
+    * *Espera unos segundos mientras la consola de ComfyUI procesa...*
+4.  **Resultados:** El modelo aparecerá en el centro de tu escena.
+5.  **Exportar:** Haz clic en **Export for Mixamo Auto-Rig** para obtener el `.fbx` listo en tu carpeta de Descargas.
 
 ---
 
-## 🤝 Credits & Technologies
+## 🧪 Modo Manual / Pruebas (Sin Add-on)
 
-* **Hunyuan3D:** 3D generative model.
-* **Bria AI:** Background removal technology.
-* **ComfyUI Community:** Node ecosystem.
-* **Developed by:** Alejandro González Ferrer for FIBO Hackathon 2025.
+Si prefieres probar el flujo de trabajo de IA sin instalar el Add-on de Blender, hemos incluido el archivo de workflow original:
+
+1.  Descarga el archivo `workflow.json` incluido en este repositorio.
+2.  Abre ComfyUI en tu navegador.
+3.  Arrastra y suelta el archivo `workflow.json` dentro de la ventana.
+4.  ¡Listo! Ahora puedes generar manualmente y ver la magia tras bambalinas.
+
+---
+
+## 🤝 Créditos y Tecnologías
+
+* **Hunyuan3D:** Modelo generativo 3D.
+* **Bria AI:** Tecnología de eliminación de fondo.
+* **ComfyUI Community:** Ecosistema de nodos.
+* **Desarrollado por:** Alejandro González Ferrer, proyecto para la materia: Programación para Herramientas de Modelado 3D, 2025.
