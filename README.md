@@ -14,7 +14,7 @@
 This repository contains the source code and workflow for integrating local Generative AI into professional 3D pipelines. The project solves the friction between asset generation and implementation.
 
 **Key Features:**
-* 🎨 **Text-to-3D Generation:** Utilizes Hunyuan3D (v2) for high-fidelity geometry.
+* 🎨 **Text-to-3D Generation:** Utilizes Hunyuan3D (v2.1) for high-fidelity geometry.
 * 🖌️ **Auto-Texturing:** Integrates texture projection via Juggernaut XL and Bria AI (RMBG) for background removal.
 * 🦴 **Auto-Rig Ready:** Automated export to `.fbx` format optimized for Mixamo.
 * 🔒 **Local Privacy:** All processing happens on your machine (Localhost), ensuring data privacy.
@@ -37,14 +37,10 @@ Before installing the Add-on, ensure you meet the following hardware and softwar
 
 ### Phase 1: Backend Configuration (ComfyUI)
 
-For Blender to "talk" to the AI, ComfyUI must have the necessary models loaded.
-
 1.  **Install Required Nodes:**
     Use *ComfyUI Manager* to install these nodes if you don't have them:
     * `ComfyUI-Hunyuan3DWrapper`
     * `ComfyUI-Bria_AI-RMBG`
-    * `ComfyUI-VideoHelperSuite` (for file loading/management)
-    * `KJNodes` (optional, for utilities)
 
 2.  **Download Models:**
     Place the checkpoints in their corresponding folders (`ComfyUI/models/...`):
@@ -57,13 +53,11 @@ For Blender to "talk" to the AI, ComfyUI must have the necessary models loaded.
 1.  Download the `.zip` file from this repository (or zip `__init__.py` and `workflow.json` together).
 2.  Open Blender and go to **Edit > Preferences > Add-ons**.
 3.  Click on **Install...** and select the `.zip` file.
-4.  Check the box ☑️ **Gen AI Bria3D+H** to enable it.
+4.  Check the box ☑️ **GAIH3D** to enable it.
 
 ---
 
 ## ⚙️ Critical Configuration (Important!)
-
-Since this is a Hackathon prototype (MVP), verifying the file output path on your local PC is necessary.
 
 1.  In Blender, go to the **Scripting** tab.
 2.  If necessary, edit the `COMFY_OUTPUT_DIR` variable in the script to point to your `ComfyUI/output` folder.
@@ -101,11 +95,7 @@ If you prefer to test the AI workflow without installing the Blender Add-on, we 
 
 ## 🤝 Credits & Technologies
 
-* **Hunyuan3D Team (Tencent):** For the base generative model.
-* **Bria AI:** For background removal technology.
-* **ComfyUI Community:** For the node ecosystem.
+* **Hunyuan3D:** 3D generative model.
+* **Bria AI:** Background removal technology.
+* **ComfyUI Community:** Node ecosystem.
 * **Developed by:** Alejandro González Ferrer for FIBO Hackathon 2025.
-
----
-
-⚖️ *This project is distributed under the MIT License. Use responsibly.*
