@@ -3,16 +3,14 @@
 ![Blender](https://img.shields.io/badge/Blender-4.0%2B-orange?logo=blender)
 ![ComfyUI](https://img.shields.io/badge/Backend-ComfyUI-blue)
 ![Python](https://img.shields.io/badge/Code-Python%203.10-yellow?logo=python)
+![Mixamo](https://img.shields.io/badge/Rigging-Mixamo-red)
 
-**GAIB H3D** es un puente directo entre el poder generativo de **Hunyuan3D + Bria AI** y el entorno profesional de **Blender**. Este Add-on permite a artistas y desarrolladores generar modelos 3D texturizados a partir de texto y prepararlos para animación (Rigging) con un solo clic, sin salir nunca de la interfaz de Blender.
+**GAIB H3D** es un puente directo entre el poder generativo de **Hunyuan3D + Bria AI** y el entorno profesional de **Blender**. Este Add-on permite a los artistas, animadores y a desarrolladores de videojuegos generar modelos 3D texturizados a partir de texto y prepararlos para su exportación a Mixamo para para un proceso automatizado de rigging.
 
 ---
 
 ## 🎯 Sobre este Proyecto
 
-Este repositorio contiene el código fuente y el flujo de trabajo para integrar IA Generativa local en pipelines de 3D profesional. El proyecto resuelve la fricción entre la generación de activos y su implementación.
-
-**Características Clave:**
 * 🎨 **Generación de Texto a 3D:** Utiliza Hunyuan3D (v2.1) para geometría de alta fidelidad.
 * 🖌️ **Auto-Texturizado:** Integra proyección de texturas vía Juggernaut XL y Bria AI (RMBG) para la eliminación de fondos.
 * 🦴 **Listo para Auto-Rig:** Exportación automatizada a formato `.fbx` optimizado para Mixamo.
@@ -21,8 +19,6 @@ Este repositorio contiene el código fuente y el flujo de trabajo para integrar 
 ---
 
 ## 🛠️ Requisitos Previos
-
-Antes de instalar el Add-on, asegúrate de cumplir con los siguientes requisitos de hardware y software:
 
 * **SO:** Windows 10/11.
 * **GPU:** NVIDIA RTX 3060 o superior (Recomendado 12GB+ VRAM, Mínimo 6GB).
@@ -56,7 +52,7 @@ Antes de instalar el Add-on, asegúrate de cumplir con los siguientes requisitos
 
 ---
 
-## ⚙️ Configuración Crítica (¡Importante!)
+## ⚙️ Configuración (¡Importante!)
 
 1.  En Blender, ve a la pestaña de **Scripting**.
 2.  Si es necesario, edita la variable `COMFY_OUTPUT_DIR` en el script para que apunte a tu carpeta `ComfyUI/output`.
@@ -68,7 +64,7 @@ Antes de instalar el Add-on, asegúrate de cumplir con los siguientes requisitos
 
 ---
 
-## 🎮 Cómo Usar
+## 🎮 ¿Cómo Usar?
 
 1.  **Iniciar ComfyUI:** Asegúrate de que la consola esté abierta y esperando comandos.
 2.  **Abrir Blender:** Presiona la tecla `N` en el Viewport 3D para abrir la barra lateral.
@@ -81,20 +77,9 @@ Antes de instalar el Add-on, asegúrate de cumplir con los siguientes requisitos
 
 ---
 
-## 🧪 Modo Manual / Pruebas (Sin Add-on)
-
-Si prefieres probar el flujo de trabajo de IA sin instalar el Add-on de Blender, hemos incluido el archivo de workflow original:
-
-1.  Descarga el archivo `workflow.json` incluido en este repositorio.
-2.  Abre ComfyUI en tu navegador.
-3.  Arrastra y suelta el archivo `workflow.json` dentro de la ventana.
-4.  ¡Listo! Ahora puedes generar manualmente y ver la magia tras bambalinas.
-
----
-
 ## 🤝 Créditos y Tecnologías
 
 * **Hunyuan3D:** Modelo generativo 3D.
 * **Bria AI:** Tecnología de eliminación de fondo.
 * **ComfyUI Community:** Ecosistema de nodos.
-* **Desarrollado por:** Alejandro González Ferrer, proyecto para la materia: Programación para Herramientas de Modelado 3D, 2025.
+* **Desarrollado por:** Alejandro González Ferrer, proyecto para la materia: Programación para Herramientas de Modelado 3D y presentado en el FIBO Hackathon, 2025.
