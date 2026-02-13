@@ -1,6 +1,6 @@
 # 🚀 GAIB H3D: Inteligencia Artificial Generativa Bria con Hunyuan 3D
 
-![Blender](https://img.shields.io/badge/Blender-4.0%2B-orange?logo=blender)
+![Software](https://img.shields.io/badge/Software-Blender_(+4.0)-orange?logo=blender)
 ![ComfyUI](https://img.shields.io/badge/Backend-ComfyUI-blue)
 ![Python](https://img.shields.io/badge/Code-Python%203.10-yellow?logo=python)
 ![Mixamo](https://img.shields.io/badge/Rigging-Mixamo-red)
